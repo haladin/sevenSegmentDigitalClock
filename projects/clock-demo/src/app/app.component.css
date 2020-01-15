@@ -1,0 +1,18 @@
+.empty {
+    margin-top: 2em;
+}
+.card-space {
+    margin-top: 2em;
+}
+.margin-left {
+    margin-left: 1.5em;
+}
+div.card-body ul {
+    padding-top: 1.5em;                
+}
+::placeholder { 
+    color: rgb(138, 138, 138);
+    font-style: italic;
+    font-size: 0.85em;
+    opacity: 1; 
+}

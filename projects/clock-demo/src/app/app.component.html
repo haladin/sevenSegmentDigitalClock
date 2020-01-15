@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row empty">
+  </div>
+  <div class="row">
+    <div class="col">
+    </div>              
+    <div class="col-8">
+      <div class="card card-space align-items-center">
+          <div class="card-body">
+              <div [style.width]="clockSize">
+                  <lib-display [config]="clockConfig"></lib-display>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-8">
+          <div class="card card-space">
+              <div class="card-body">
+                  <div>
+                      <h5 class="card-title">Set clock configuration:</h5>
+                      <input class="margin-left" type="text" id="config" [placeholder]="configText" [(ngModel)]="config"/>
+                      <input type="button" (click)="setClockConfig()" value="Set"/>
+                      <br/>
+                      <br/>
+                      <h5 class="card-title">Set clock size:</h5>
+                      <div class="form-check margin-left">
+                          <input class="form-check-input" type="radio" name="sizes" id="small" (click)="onSizeButtonClicked($event)">
+                          <label class="form-check-label" for="small">
+                              Small
+                          </label>
+                      </div>
+                      <div class="form-check margin-left">
+                          <input class="form-check-input" type="radio" name="sizes" id="medium" (click)="onSizeButtonClicked($event)" checked>
+                          <label class="form-check-label" for="medium">
+                              Medium
+                          </label>
+                      </div>
+                      <div class="form-check margin-left">
+                          <input class="form-check-input" type="radio" name="sizes" id="big" (click)="onSizeButtonClicked($event)">
+                          <label class="form-check-label" for="big">
+                              Big
+                          </label>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+      <div class="col">                
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">                    
+      </div>
+      <div class="col-8">
+          <div class="card card-space">
+              <div class="card-body">
+                  <h5 class="card-title">How to set formatting:</h5>
+                  <ul>
+                      <li>h : Formats the hours field in 12-hours format without leading zero (1..12).</li>
+                      <li>hh: Formats the hours field in 12-hours format with leading zero (01..12).</li>
+                      <li>H : Formats the hours field in 24-hours format without leading zero (0..23).</li>
+                      <li>HH: Formats the hours field in 24-hours format with leading zero (00..23).</li>
+                      <li>m : Formats the minutes field without leading zero (0..59).</li>
+                      <li>mm: Formats the minutes field with leading zero (00..59).</li>
+                      <li>s : Formats the seconds field without leading zero (0..59).</li>
+                      <li>ss: Formats the seconds field with leading zero (00..59).</li>
+                      <li>tt: Represents the AM/PM field. (Only applied when hours are set to h or hh)</li>
+                  </ul>
+              </div>
+            </div>                    
+      </div>
+      <div class="col">                
+      </div>
+    </div>
+</div>
+
+<script>
+
+  function setConfig() {
+      var clock = document.getElementsByTagName("lib-display")[0];
+      var config = document.getElementById("config");
+      clock.config = config.value;
+      config.placeholder = "Current config: " + config.value;
+      config.value = '';
+  }
+
+</script>

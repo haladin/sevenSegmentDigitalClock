@@ -9,7 +9,11 @@ Digital clock with seven segment digits.
     cd sevenSegmentDigitalClock
     sudo npm install -g @angular/cli
 	npm install
-	ng build
+	ng build seven-segment-clock-lib
+
+## Running demo application:
+
+    ng serve clock-demo
 
 ## Test
     
