@@ -5,24 +5,54 @@ Digital clock with seven segment digits.
 
 ## Build:
 
+```shell
     git clone https://github.com/haladin/sevenSegmentDigitalClock
     cd sevenSegmentDigitalClock
     sudo npm install -g @angular/cli
 	npm install
 	ng build seven-segment-clock-lib
-
-## Running demo application:
-
-    ng serve clock-demo
+```
 
 ## Test
     
-    ng test
+    `ng test`
 
 ## Usage
 
 ```HTML
     <lib-display [config]="clockConfig"></lib-display>
+```
+
+## Running demo application:
+
+    `ng serve clock-demo`
+
+## Building web component
+
+    `npm run buildweb`
+
+## Web component Usage:
+
+Copy `custom-clock-element.js` from `./dist/clock-web-component` and include it in your html.
+
+Example:
+```html
+<!DOCTYPE  html>
+<html>
+    <head>
+		<script src="./custom-clock-element.js"/>
+		<style>
+			.clock {
+				width: 450px;
+			}
+		</style>
+	</head>
+	<body style="background-color: black;">
+		<div class="container clock">
+			<app-display  config="HHmmss"/>
+		</div>
+	</body>
+</html>
 ```
 
 ## Clock configuration:

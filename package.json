@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prebuildweb": "rm -f ./dist/clock-web/component/custom-clock-element.js",
+    "buildweb": "ng build clock-web-component --prod --output-hashing=none",
+    "postbuildweb": "cat ./dist/clock-web-component/runtime-es5.js ./dist/clock-web-component/polyfills-es5.js ./dist/clock-web-component/main-es5.js > ./dist/clock-web-component/custom-clock-element.js"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +18,7 @@
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
+    "@angular/elements": "^8.2.14",
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",

@@ -8,10 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'clokc-demo';
 
+  private defaultConfigText = 'Default: HHmmss';
   clockSize = "450px";
   config: string;
   clockConfig: string = 'HHmmss';
-  configText: string = 'Default: HHmmss';
+  configText: string = this.defaultConfigText;
 
   onSizeButtonClicked(event: MouseEvent) {
     let elementId: string = (event.target as Element).id;
@@ -30,8 +31,14 @@ export class AppComponent {
 
   setClockConfig() {
     this.clockConfig = this.config;
+    
+    if (!this.config){
+      this.configText = this.defaultConfigText;
+    } else {
+      this.configText = 'Config: ' + this.clockConfig;
+    }
+
     this.config = '';
-    this.configText = 'Config: ' + this.clockConfig;
   }
 
 }
