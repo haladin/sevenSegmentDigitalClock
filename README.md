@@ -41,7 +41,7 @@ Example:
 <html>
     <head>
         <meta charset="utf-8"/>
-		<script src="./custom-clock-element.js"></script>        
+        <script src="./custom-clock-element.js"></script>        
         <style>
             .clock {
                 width: 450px;
