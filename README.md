@@ -40,7 +40,8 @@ Example:
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="./custom-clock-element.js"/>
+        <meta charset="utf-8"/>
+		<script src="./custom-clock-element.js"></script>        
         <style>
             .clock {
                 width: 450px;
@@ -48,8 +49,8 @@ Example:
         </style>
     </head>
     <body style="background-color: black;">
-        <div class="container clock">
-            <app-display  config="HHmmss"/>
+        <div class="clock">
+            <app-display-clock config="HHmmtt"></app-display-clock>
         </div>
     </body>
 </html>
