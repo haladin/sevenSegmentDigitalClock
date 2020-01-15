@@ -13,11 +13,11 @@ npm install
 ng build seven-segment-clock-lib
 ```
 
-## Test
+## Test:
     
 `ng test`
 
-## Usage
+## Usage:
 
 ```html
 <lib-display [config]="clockConfig"></lib-display>
@@ -27,11 +27,11 @@ ng build seven-segment-clock-lib
 
 `ng serve clock-demo`
 
-## Building web component
+## Building web component:
 
 `npm run buildweb`
 
-## Web component Usage:
+## Web component usage:
 
 Copy `custom-clock-element.js` from `./dist/clock-web-component` and include it in your html.
 
