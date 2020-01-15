@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "seven-segment-clock-lib": {
+      "projectType": "library",
+      "root": "projects/seven-segment-clock-lib",
+      "sourceRoot": "projects/seven-segment-clock-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/seven-segment-clock-lib/tsconfig.lib.json",
+            "project": "projects/seven-segment-clock-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/seven-segment-clock-lib/src/test.ts",
+            "tsConfig": "projects/seven-segment-clock-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/seven-segment-clock-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/seven-segment-clock-lib/tsconfig.lib.json",
+              "projects/seven-segment-clock-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "seven-segment-clock-lib"
+}
